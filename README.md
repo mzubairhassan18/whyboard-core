@@ -26,6 +26,15 @@ console.log(trace.queries.length); // 4 read-only queries behind it
 
 Built on the [AI SDK](https://ai-sdk.dev) 7, libSQL, PapaParse and Zod.
 
+## Demos
+
+- **[jobseeker](https://github.com/mzubairhassan18/whyboard-jobseeker)** — [live](https://whyboard-jobseeker.vercel.app)
+  An application tracker CSV in, the story behind the rejections out.
+- **[ecommerce](https://github.com/mzubairhassan18/whyboard-ecommerce)** — [live](https://whyboard-ecommerce.vercel.app)
+  An orders CSV in, the reason revenue moved out.
+
+Both demos stream the detective's tool calls and SQL as it works, then the storyteller's answer.
+
 ---
 
 ## Install
