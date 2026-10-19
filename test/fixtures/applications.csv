@@ -1,0 +1,25 @@
+application_id,applied_at,company,role,source,stage,outcome,salary_expectation,days_to_response
+1,2025-01-06,Northwind,Backend Engineer,LinkedIn,Rejected,rejected,95000,18
+2,2025-01-08,Contoso,Platform Engineer,Referral,Offer,offer,105000,6
+3,2025-01-09,Initech,Full Stack Developer,Job board,Rejected,rejected,90000,31
+4,2025-01-13,Fabrikam,Backend Engineer,LinkedIn,Rejected,rejected,98000,22
+5,2025-01-15,Globex,Senior Backend Engineer,Referral,Interview,interview,120000,4
+6,2025-01-17,Umbrella,Node.js Developer,Job board,Rejected,rejected,88000,27
+7,2025-01-20,Northwind,Senior Backend Engineer,LinkedIn,Rejected,rejected,110000,19
+8,2025-01-22,Acme,Platform Engineer,Referral,Interview,interview,115000,5
+9,2025-01-24,Initech,Backend Engineer,Job board,Rejected,rejected,92000,24
+10,2025-01-27,Contoso,Staff Engineer,LinkedIn,Rejected,rejected,135000,16
+11,2025-01-29,Fabrikam,Full Stack Developer,Referral,Offer,offer,100000,7
+12,2025-02-03,Globex,Backend Engineer,LinkedIn,Rejected,rejected,96000,21
+13,2025-02-05,Umbrella,Platform Engineer,Job board,Rejected,rejected,94000,29
+14,2025-02-07,Acme,Senior Backend Engineer,Referral,Interview,interview,118000,5
+15,2025-02-10,Northwind,Backend Engineer,LinkedIn,Rejected,rejected,97000,17
+16,2025-02-12,Initech,Staff Engineer,LinkedIn,Rejected,rejected,140000,25
+17,2025-02-14,Contoso,Full Stack Developer,Job board,Rejected,rejected,89000,26
+18,2025-02-17,Fabrikam,Backend Engineer,LinkedIn,Ghosted,ghosted,99000,0
+19,2025-02-19,Globex,Senior Backend Engineer,Referral,Interview,interview,122000,3
+20,2025-02-21,Umbrella,Node.js Developer,LinkedIn,Ghosted,ghosted,91000,0
+21,2025-02-24,Acme,Backend Engineer,Job board,Interview,interview,93000,11
+22,2025-02-26,Northwind,Platform Engineer,LinkedIn,Rejected,rejected,101000,20
+23,2025-02-28,Contoso,Backend Engineer,Referral,Rejected,rejected,108000,9
+24,2025-03-03,Initech,Full Stack Developer,LinkedIn,Ghosted,ghosted,87000,0

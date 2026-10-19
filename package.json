@@ -1,0 +1,104 @@
+{
+  "name": "whyboard-core",
+  "version": "0.1.0",
+  "description": "Bring any database, get an AI storyteller. Universal read-only adapters + a hypothesis-testing \"why\" engine for Grok, OpenAI and the Vercel AI Gateway.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./templates": {
+      "types": "./dist/templates/index.d.ts",
+      "default": "./dist/templates/index.js"
+    },
+    "./templates/ecommerce": {
+      "types": "./dist/templates/ecommerce.d.ts",
+      "default": "./dist/templates/ecommerce.js"
+    },
+    "./templates/jobseeker": {
+      "types": "./dist/templates/jobseeker.d.ts",
+      "default": "./dist/templates/jobseeker.js"
+    },
+    "./templates/saas": {
+      "types": "./dist/templates/saas.d.ts",
+      "default": "./dist/templates/saas.js"
+    },
+    "./adapters/csv": {
+      "types": "./dist/adapters/csv.d.ts",
+      "default": "./dist/adapters/csv.js"
+    },
+    "./adapters/turso": {
+      "types": "./dist/adapters/turso.d.ts",
+      "default": "./dist/adapters/turso.js"
+    },
+    "./adapters/postgres": {
+      "types": "./dist/adapters/postgres.d.ts",
+      "default": "./dist/adapters/postgres.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "ai",
+    "analytics",
+    "database",
+    "storyteller",
+    "why",
+    "root-cause",
+    "csv",
+    "turso",
+    "sqlite",
+    "libsql",
+    "postgres",
+    "grok",
+    "xai",
+    "openai",
+    "ai-sdk",
+    "text-to-sql",
+    "bi"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mzubairhassan18/whyboard-core.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mzubairhassan18/whyboard-core/issues"
+  },
+  "homepage": "https://github.com/mzubairhassan18/whyboard-core#readme",
+  "author": "mzubairhassan18",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/core.test.ts test/csv.test.ts test/whyboard.test.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@ai-sdk/gateway": "^4.0.116",
+    "@ai-sdk/openai": "^4.0.96",
+    "@ai-sdk/xai": "^5.0.24",
+    "@libsql/client": "^0.18.0",
+    "ai": "^7.0.143",
+    "papaparse": "^5.7.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/papaparse": "^5.3.16",
+    "tsup": "^9.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}
