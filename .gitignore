@@ -9,3 +9,4 @@ coverage/
 *.tsbuildinfo
 .vercel
 tmp/
+*.tgz
