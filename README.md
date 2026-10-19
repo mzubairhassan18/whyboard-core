@@ -340,6 +340,19 @@ import { PostgresAdapter } from 'whyboard-core/adapters/postgres';
 - Persisted story library (save, share, re-run)
 - Scheduled "watch this metric" runs
 
+## Development
+
+```bash
+npm install
+npm run typecheck
+npm run build
+npm test
+```
+
+`npm run build` uses tsup + rollup-plugin-dts, which needs the TypeScript JS compiler API.
+TypeScript 7 (the native port) does not expose it yet, so the project pins the 5.9 line.
+Bump it once rollup-plugin-dts supports TS 7.
+
 ## License
 
 MIT
