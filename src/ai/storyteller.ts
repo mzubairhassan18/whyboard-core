@@ -1,6 +1,7 @@
 import { generateText, streamText, type LanguageModel } from 'ai';
 import type { Findings, Template, Usage } from '../types.js';
 import { toJsonSafe } from '../util/values.js';
+import { streamError } from './stream-error.js';
 
 export interface ComposeOptions {
   model: LanguageModel;
@@ -93,6 +94,8 @@ export async function* streamStory(options: ComposeOptions): AsyncGenerator<stri
     if (part.type === 'text-delta' && part.text !== '') {
       markdown += part.text;
       yield part.text;
+    } else if (part.type === 'error') {
+      throw streamError(part.error);
     }
   }
 

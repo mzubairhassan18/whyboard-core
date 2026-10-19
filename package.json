@@ -1,6 +1,6 @@
 {
   "name": "whyboard-core",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Bring any database, get an AI storyteller. Universal read-only adapters + a hypothesis-testing \"why\" engine for Grok, OpenAI and the Vercel AI Gateway.",
   "license": "MIT",
   "type": "module",

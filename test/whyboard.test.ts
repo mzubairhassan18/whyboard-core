@@ -163,3 +163,45 @@ test('unknown templates fail loudly', async () => {
     await wb.close();
   }
 });
+
+test('surfaces provider stream errors instead of a generic NoOutput error', async () => {
+  const detective = new MockLanguageModelV4({
+    modelId: 'mock-detective',
+    doStream: [
+      {
+        stream: new ReadableStream({
+          start(controller) {
+            controller.enqueue({ type: 'stream-start', warnings: [] });
+            controller.enqueue({
+              type: 'error',
+              error: {
+                message: 'AI Gateway requires a valid credit card on file',
+              },
+            });
+            controller.close();
+          },
+        }),
+      },
+    ],
+  });
+
+  const adapter = new CSVAdapter({ source: { name: 'applications', content: csv } });
+  const wb = new Whyboard({ adapter, models: { detective } });
+
+  try {
+    const events: string[] = [];
+    let message = '';
+
+    await assert.rejects(async () => {
+      for await (const event of wb.explainStream('Why?')) {
+        events.push(event.type);
+        if (event.type === 'error') message = event.message;
+      }
+    });
+
+    assert.equal(events.at(-1), 'error');
+    assert.match(message, /valid credit card/);
+  } finally {
+    await wb.close();
+  }
+});

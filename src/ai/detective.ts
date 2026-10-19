@@ -8,6 +8,7 @@ import type {
   Usage,
 } from '../types.js';
 import { renderSchema } from '../util/format.js';
+import { streamError } from './stream-error.js';
 import { compactForTrace, Collector } from './trace.js';
 import { buildInvestigatorTools, findingsSchema, type InvestigationTools } from './tools.js';
 
@@ -213,6 +214,8 @@ export async function* investigateStream(
       };
     } else if (part.type === 'tool-result') {
       yield { type: 'tool-result', tool: part.toolName };
+    } else if (part.type === 'error') {
+      throw streamError(part.error);
     }
   }
 
